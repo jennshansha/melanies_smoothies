@@ -35,10 +35,12 @@ if ingredients_list:
 
    my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
             values ('""" + ingredients_string + """','""" +name_on_order+ """')"""
- 
+
+#new section to show fruityvice nuitrition info
+
 import requests
-   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-   st.text(fruityvice_response.json())
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response.json())
 
    #st.write(my_insert_stmt)
    #st.stop()
